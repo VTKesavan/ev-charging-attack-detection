@@ -1,63 +1,87 @@
-# EV Attack Detection (AD-GS Framework)
 
-- Project Overview
+README.txt
+==========
 
-This project presents the AD-GS (Anomaly Detection - Global Security). framework, a comprehensive solution for identifying and mitigating cyber-attacks within Electric Vehicle (EV) charging infrastructures. The framework leverages a sophisticated ensemble of machine learning and deep learning models to detect a variety of attack vectors, including .DDoS, Data Manipulation, Man-in-the-Middle (MitM), False Data Injection (FDI), and Spoofing.. By analyzing charging session data, the AD-GS framework provides a robust defense mechanism to ensure the security and integrity of the EV charging ecosystem.
+Project Title:
+EV Attack Detection System
 
-- Code Structure
+Description:
+This project contains source code and supporting scripts for detecting cyber/false data injection
+and anomaly-based attacks in Electric Vehicle (EV) or Smart Grid environments using machine learning
+and deep learning techniques.
 
-The project is organized into a series of directories, each serving a specific purpose. The table below provides a summary of the key directories and their contents.
+The code is organized in a modular and hierarchical manner to support:
+- Data preprocessing
+- Feature extraction
+- Model training and testing
+- Performance evaluation
+- Visualization and result analysis
 
-| Directory | Description |
-|---|---|
-| `Models/` | Contains pre-trained machine learning models in `.pkl` format, along with the data scaler used for preprocessing. |
-| `Model_Results/` | Stores intermediate results from model training, including feature importance scores and model-specific configuration files. |
-| `Processed_Data/` | Includes the datasets used for model training and evaluation, as well as visualizations generated during the analysis. |
-| `Results/` | Contains the final evaluation reports, performance metrics, and statistical summaries of the dataset. |
-| `anaconda_projects/` | Holds project-specific database files. |
+Folder Hierarchy:
+-----------------
+ev_code/
+  Code_ev-attack-detection/
+    Code_ev_attack_detection.ipynb
+    .ipynb_checkpoints/
+      Code_ev_attack_detection.ipynb
+    anaconda_projects/
+      db/
+        project_filebrowser.db
+    Models/
+      ad_gs_ensemble.pkl
+      random_forest.pkl
+      scaler.pkl
+      svm_model.pkl
+    Model_Results/
+      ensemble_config.json
+      feature_importance.csv
+      federated_learning_results.json
+      rf_results.json
+      svm_results.json
+    Processed_Data/
+      attacked_dataset.csv
+      attack_enriched_dataset.csv
+      combined_data.csv
+      features_dataset.csv
+      Fig14.png
+      Fig15.png
+      Fig16.png
+      Fig17.png
+      Fig18.png
+      preprocessed_dataset.csv
+    Results/
+      attack_specific_performance.json
+      baseline_comparison.csv
+      baseline_comparison.json
+      confusion_matrices.json
+      phase1_dataset_statistics.txt
+      phase3_evaluation_report.txt
+      phase3_metrics.json
+      scalability_results.json
+      visualization_data.json
 
-- Getting Started
+How to Use the Code:
+-------------------
+1. Ensure Python 3.8 or above is installed.
+2. Install required dependencies using:
+   pip install -r requirements.txt   (if available)
 
-To get started with the AD-GS framework, you will need to set up your environment and run the main analysis script. The following sections provide detailed instructions on how to do so.
+3. Place the dataset (.csv format) in the appropriate data/ folder.
+4. Run the main execution script (e.g., main.py or train.py) to:
+   - Load and preprocess the dataset
+   - Train the proposed attack detection model
+   - Evaluate performance metrics
 
-- Prerequisites
+5. Use evaluation or plotting scripts to generate graphs and result tables.
 
-Before running the code, please ensure that you have Python installed on your system, along with the following libraries:
+Inputs:
+-------
+- Dataset file(s) in CSV format
+- Configurable hyperparameters inside config or main scripts
 
-*   `tensorflow`
-*   `scikit-learn`
-*   `flwr`
-*   `pandas`
-*   `numpy`
-*   `matplotlib`
-*   `seaborn`
-*   `xgboost`
+Outputs:
+--------
+- Trained model files
+- Performance metrics (Accuracy, Precision, Recall, F1-score, etc.)
+- Graphs and plots for analysis
 
-- Execution
-
-The core logic of the project is contained within the `Code_ev_attack_detection.ipynb` Jupyter Notebook. To run the analysis, follow these steps:
-
-1.  .Launch Jupyter.: Open a terminal or command prompt and launch Jupyter Notebook or JupyterLab.
-2.  .Open the Notebook.: Navigate to the project directory and open the `Code_ev_attack_detection.ipynb` notebook.
-3.  .Run the Cells.: Execute the cells in the notebook sequentially. The notebook is divided into the following phases:
-    -   .Phase 1.: Data analysis and statistical modeling.
-    -   .Phase 2.: Development and training of the anomaly detection models.
-    -   .Phase 3.: Simulation of a federated learning environment and integration of the ensemble model.
-    -   .Phase 4.: Final evaluation of the models and visualization of the results.
-4.  .Review the Results.: The final performance metrics and reports can be found in the `Results/` and `Model_Results/` directories.
-
-- Implemented Models
-
-The AD-GS framework incorporates a variety of models to ensure high-accuracy attack detection. The following table provides an overview of the models used in this project.
-
-| Model | Description |
-|---|---|
-| .LSTM Autoencoder. | A deep learning model used for sequential anomaly detection based on reconstruction error. |
-| .Random Forest. | A traditional machine learning classifier trained on tabular features. |
-| .Support Vector Machine (SVM). | A model used for binary classification of normal versus attack-based charging sessions. |
-| .Ensemble Model. | A model that combines the outputs from multiple models using a weighted voting scheme to improve overall accuracy. |
-| .Federated Learning. | A decentralized training approach that simulates a real-world scenario with multiple charging stations, using the Flower framework. |
-
-- Dataset
-
-The data is labeled, with .0. indicating a normal session and .1. indicating an attack. The dataset is imbalanced, with a smaller proportion of attack samples. The attack types include DDoS, Data Manipulation, MitM, FDI, and Spoofing.
