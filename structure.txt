@@ -1,0 +1,37 @@
+Code-ev-attack-detection/
+├── Code_ev_attack_detection.ipynb             # Main Jupyter Notebook
+├── Model_Results/                    # Training and configuration results
+│   ├── ensemble_config.json
+│   ├── feature_importance.csv
+│   ├── federated_learning_results.json
+│   ├── rf_results.json
+│   └── svm_results.json
+├── Models/                           # Pre-trained model files
+│   ├── ad_gs_ensemble.pkl
+│   ├── random_forest.pkl
+│   ├── scaler.pkl
+│   └── svm_model.pkl
+├── Processed_Data/                   # Datasets and visualizations
+│   ├── Fig14.png
+│   ├── Fig15.png
+│   ├── Fig16.png
+│   ├── Fig17.png
+│   ├── Fig18.png
+│   ├── attack_enriched_dataset.csv
+│   ├── attacked_dataset.csv
+│   ├── combined_data.csv
+│   ├── features_dataset.csv
+│   └── preprocessed_dataset.csv
+├── Results/                          # Evaluation reports and metrics
+│   ├── attack_specific_performance.json
+│   ├── baseline_comparison.csv
+│   ├── baseline_comparison.json
+│   ├── confusion_matrices.json
+│   ├── phase1_dataset_statistics.txt
+│   ├── phase3_evaluation_report.txt
+│   ├── phase3_metrics.json
+│   ├── scalability_results.json
+│   └── visualization_data.json
+└── anaconda_projects/                # Project database files
+    └── db
+        └── project_filebrowser.db
